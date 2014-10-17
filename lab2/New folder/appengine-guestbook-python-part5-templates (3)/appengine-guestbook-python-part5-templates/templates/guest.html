@@ -1,0 +1,24 @@
+<!DOCTTYPE html>
+<head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+
+{% autoescape true %}
+<html>
+ <head>
+    <title>Guest Book 2</title>
+ </head>
+ <body>
+    <h2>The {{user}} wrote</h2><hr/>
+    <h3>{{ greetings }}</h3>
+     
+    <form action="/sign" method="post">
+     <div><textarea name="content" rows="3" cols="60"></textarea></div>
+     <div><input type="submit" value="Sign Guestbook"></div>
+    </form>
+     
+    <a href="{{ url_logout|safe }}">{{ url_logout_text}}</a> 
+     
+ </body>
+</html>
+{% endautoescape %}
